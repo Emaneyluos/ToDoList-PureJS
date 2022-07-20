@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Louis George Cafe';
-    src: url('/style/font/LouisGeorgeCafe.woff2') format('woff2'),
-        url('/style/font/LouisGeorgeCafe.ttf') format('truetype');
+    src: url('/styles/font/LouisGeorgeCafe.woff2') format('woff2'),
+        url('/styles/font/LouisGeorgeCafe.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Louis George Cafe';
-    src: url('/style/font/LouisGeorgeCafe-Bold.woff2') format('woff2'),
-    url('/style/font/LouisGeorgeCafeBold.ttf') format('truetype');
+    src: url('/styles/font/LouisGeorgeCafe-Bold.woff2') format('woff2'),
+    url('/styles/font/LouisGeorgeCafeBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -69,6 +69,7 @@ button {
     height : 50px;
     
     border: 0.15rem solid;
+    flex-shrink: 0;
     border-color: white;
     border-radius: 5px;
     
@@ -96,11 +97,15 @@ button:hover{
 }
 
 
-#toDo > * {
+#toDo {
+    overflow: scroll;
+}
 
+#toDo > * {
     display: flex;
     justify-content: start;
     align-items: center;
+    
     min-width: 250px;
     gap: 15px;
 
