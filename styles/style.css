@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('/style/font/LouisGeorgeCafe.woff2') format('woff2'),
+        url('/style/font/LouisGeorgeCafe.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('/style/font/LouisGeorgeCafe-Bold.woff2') format('woff2'),
+    url('/style/font/LouisGeorgeCafeBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+    overflow: hidden; 
+    font-family: "Louis George Cafe", sans-serif;
+    background: linear-gradient(to bottom right, rgba(172, 255, 47, 0.767), rgba(100, 148, 237, 0.76),  rgba(220, 20, 60, 0.808));
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    box-shadow: 5px 5px 80px 16px white;
+    border-radius: 7%;
+    border: 0.2rem solid;
+    border-color: white;
+
+    background: linear-gradient(to bottom left, crimson, cornflowerblue, greenyellow);
+
+    width: 350px;
+    height: 500px;
+    gap : 10px;
+}
+
+h1 {
+    margin-bottom: 20%;
+    color: white;
+    font-size: 45px;
+}
+
+input {
+    width: 15rem;
+    height: 1.5rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+}
+
+button {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+
+    width: 180px;
+    height : 50px;
+    
+    border: 0.15rem solid;
+    border-color: white;
+    border-radius: 5px;
+    
+
+    background-color: rgb(65, 94, 150);
+    transition-duration: 0.4s;
+}
+
+#deleteAll {
+    background-color: rgb(148, 6, 34);
+}
+
+button:hover{
+    background-color: cornflowerblue;
+}
+
+#deleteAll:hover {
+    
+    background-color:  rgb(243, 90, 85);
+}
+
+#send {
+    margin-top: 20%;
+
+}
+
+
+#toDo > * {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-width: 250px;
+    gap: 15px;
+
+    color: white;
+
+    height: 1.5rem;
+}
+
+#toDo > p {
+    width: 20rem;
+}
+
+
+
+
+
+.fa-trash-can{
+    color: crimson;
+    margin-left: auto;
+    filter: drop-shadow(0 0 0.3rem crimson);
+    
+}
+
+.fa-circle-check{
+    color: greenyellow;
+    filter: drop-shadow(0 0 0.3rem greenyellow);
+
+}
