@@ -41,24 +41,22 @@ function addToDo ()
     var userEntry = myEntry.value; //Get entry 
     myEntry.value = null; //Clear entry
 
-    if (userEntry == '') { //Abort the function if the entry value is empty
-        return;
+    if (userEntry != '') { //Check if the entry value is empty
+        var myNewName = document.createElement('p'); //Create the task
+        myNewName.innerText = userEntry;
+
+        var myNewValButton = document.createElement("i") //Create validate button
+        myNewValButton.setAttribute("class", "fa-regular fa-circle-check fa-lg");
+
+        var myNewDelButton = document.createElement("i"); //Create delete button
+        myNewDelButton.setAttribute("class", "fa-regular fa-trash-can fa-lg");
+
+        myNewName.appendChild(myNewDelButton); //Create the node
+        myNewName.appendChild(myNewValButton);
+        myToDo.appendChild(myNewName); //Add the node at myToDo
+
+        paddingInput();
     }
-
-    var myNewName = document.createElement('p'); //Create the task
-    myNewName.innerText = userEntry;
-
-    var myNewValButton = document.createElement("i") //Create validate button
-    myNewValButton.setAttribute("class", "fa-regular fa-circle-check fa-lg");
-
-    var myNewDelButton = document.createElement("i"); //Create delete button
-    myNewDelButton.setAttribute("class", "fa-regular fa-trash-can fa-lg");
-
-    myNewName.appendChild(myNewDelButton); //Create the node
-    myNewName.appendChild(myNewValButton);
-    myToDo.appendChild(myNewName); //Add the node at myToDo
-
-    paddingInput();
 }
 
 function keyPressEntry(e) //Send task if the user press enter
@@ -66,7 +64,6 @@ function keyPressEntry(e) //Send task if the user press enter
     if (e.keyCode === 13){
         addToDo();
     }
-    console.log(myToDo.childNodes);
 }
 
 function paddingInput () // Place the input field
@@ -76,6 +73,7 @@ function paddingInput () // Place the input field
         myEntry.style.alignSelf = 'flex-start';
         myEntry.style.marginLeft= '1rem';7
     }
+
     else
     {
         myEntry.style.alignSelf = 'center';
@@ -88,7 +86,6 @@ function validateTask (task)
     if (task.innerHTML.slice(0, 5) === "<del>") //Check if the task if already validate
     {
         let closeDel = task.innerHTML.search("</del"); //Closing tag
-        console.log(closeDel);
         task.innerHTML = task.innerHTML.slice(5, closeDel) + task.innerHTML.slice(closeDel + 6);
     }
 
